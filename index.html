@@ -198,12 +198,14 @@
     // }
 
     let listPointsResp;
+    let listStatusResp;
     /**
      * Print the names and majors of students in a sample spreadsheet:
      * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
      * https://docs.google.com/spreadsheets/d/1bk-yMZVlhijRmyDbBC79tD9EUmnYRLZSEFY9_Mbq5Ag/edit
      */
     async function listPoints() {
+
         try {
             // Fetch first 10 files
             listPointsResp = await gapi.client.sheets.spreadsheets.values.get({
@@ -217,7 +219,6 @@
         }
 
         // console.log(listPointsResp.result.values);
-
         //
         // const range = response.result;
         //
@@ -232,9 +233,8 @@
         //
         //
         // document.getElementById('content').innerText = output;
-    }
 
-    let listStatusResp;
+    }
     async function listStatus() {
         try {
             // Fetch first 10 files
