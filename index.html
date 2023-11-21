@@ -181,16 +181,16 @@
     //     }
     // }
 
+    let listPoints;
     /**
      * Print the names and majors of students in a sample spreadsheet:
      * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
      * https://docs.google.com/spreadsheets/d/1bk-yMZVlhijRmyDbBC79tD9EUmnYRLZSEFY9_Mbq5Ag/edit
      */
     async function listPoints() {
-        let response;
         try {
             // Fetch first 10 files
-            response = await gapi.client.sheets.spreadsheets.values.get({
+            listPoints = await gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: '1bk-yMZVlhijRmyDbBC79tD9EUmnYRLZSEFY9_Mbq5Ag',
                 // range: 'Class Data!A2:E',
                 range: 'test!F7:F1000',
@@ -200,7 +200,7 @@
             return;
         }
 
-        console.log(response.result.values);
+        console.log(listPoints.result.values);
 
         //
         // const range = response.result;
@@ -218,11 +218,11 @@
         // document.getElementById('content').innerText = output;
     }
 
+    let listStatus;
     async function listStatus() {
-        let response;
         try {
             // Fetch first 10 files
-            response = await gapi.client.sheets.spreadsheets.values.get({
+            listStatus = await gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: '1bk-yMZVlhijRmyDbBC79tD9EUmnYRLZSEFY9_Mbq5Ag',
                 // range: 'Class Data!A2:E',
                 range: 'test!C7:C1000',
@@ -232,7 +232,7 @@
             return;
         }
 
-        console.log(response.result.values);
+        console.log(listStatus.result.values);
 
         //
         // const range = response.result;
@@ -250,24 +250,19 @@
         // document.getElementById('content').innerText = output;
     }
 
+    let activePoints = [];
 
-    // let arr = [['first', 45], ['second', 76],['secondthird', 44],];
-    //
-    // let arr2 = [[true, 45], [false, 76],[true, 44],];
-    //
-    // let arSum = [];
-    //
-    // let i = 0;
-    // arr2.forEach((element) => {
-    //     if(element[0] == true){
-    //
-    //         arSum.push(arr[i]);
-    //         i++;
-    //         // console.log(element);
-    //     }
-    // });
-    //
-    // console.log(arSum);
+    let i = 0;
+    listStatus.forEach((element) => {
+        if(element[0] == true){
+
+            activePoints.push(listPoints[i]);
+            i++;
+            // console.log(element);
+        }
+    });
+
+    console.log(activePoints);
 </script>
 
 
