@@ -155,6 +155,22 @@
             document.getElementById('authorize_button').innerText = 'Refresh';
             await listPoints();
             await listStatus();
+
+            console.log(listPointsResp.result.values);
+
+            let activePoints = [];
+
+            let i = 0;
+            listStatusResp.forEach((element) => {
+                if(element[0] == true){
+
+                    activePoints.push(listPointsResp[i]);
+                    i++;
+                    // console.log(element);
+                }
+            });
+
+            console.log(activePoints);
         };
 
         if (gapi.client.getToken() === null) {
@@ -249,21 +265,7 @@
         //
         // document.getElementById('content').innerText = output;
     }
-    console.log(listPointsResp.result.values);
 
-    let activePoints = [];
-
-    let i = 0;
-    listStatusResp.forEach((element) => {
-        if(element[0] == true){
-
-            activePoints.push(listPointsResp[i]);
-            i++;
-            // console.log(element);
-        }
-    });
-
-    console.log(activePoints);
 </script>
 
 
