@@ -181,7 +181,7 @@
     //     }
     // }
 
-    let listPoints;
+    let listPointsResp;
     /**
      * Print the names and majors of students in a sample spreadsheet:
      * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
@@ -190,7 +190,7 @@
     async function listPoints() {
         try {
             // Fetch first 10 files
-            listPoints = await gapi.client.sheets.spreadsheets.values.get({
+            listPointsResp = await gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: '1bk-yMZVlhijRmyDbBC79tD9EUmnYRLZSEFY9_Mbq5Ag',
                 // range: 'Class Data!A2:E',
                 range: 'test!F7:F1000',
@@ -200,7 +200,7 @@
             return;
         }
 
-        console.log(listPoints.result.values);
+        console.log(listPointsResp.result.values);
 
         //
         // const range = response.result;
@@ -218,11 +218,11 @@
         // document.getElementById('content').innerText = output;
     }
 
-    let listStatus;
+    let listStatusResp;
     async function listStatus() {
         try {
             // Fetch first 10 files
-            listStatus = await gapi.client.sheets.spreadsheets.values.get({
+            listStatusResp = await gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: '1bk-yMZVlhijRmyDbBC79tD9EUmnYRLZSEFY9_Mbq5Ag',
                 // range: 'Class Data!A2:E',
                 range: 'test!C7:C1000',
@@ -232,7 +232,7 @@
             return;
         }
 
-        console.log(listStatus.result.values);
+        console.log(listStatusResp.result.values);
 
         //
         // const range = response.result;
@@ -253,10 +253,10 @@
     let activePoints = [];
 
     let i = 0;
-    listStatus.forEach((element) => {
+    listStatusResp.forEach((element) => {
         if(element[0] == true){
 
-            activePoints.push(listPoints[i]);
+            activePoints.push(listPointsResp[i]);
             i++;
             // console.log(element);
         }
