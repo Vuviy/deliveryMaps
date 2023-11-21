@@ -169,7 +169,7 @@
 
             let i = 0;
             statuses.forEach((element) => {
-                if(element[0] == true){
+                if(element[0] == 'TRUE'){
 
                     activePoints.push(points[i]);
                     i++;
@@ -180,6 +180,7 @@
                 } else{
                     console.log('else');
                     console.log(element);
+                    console.log(element[0]);
 
                 }
             });
