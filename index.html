@@ -1,3 +1,4 @@
+
 <!--<!DOCTYPE html>-->
 <!--<html>-->
 <!--<head>-->
@@ -7,14 +8,57 @@
 <!--    <link rel="stylesheet" type="text/css" href="style.css" />-->
 <!--    <script type="module" src="index.js"></script>-->
 <!--</head>-->
+
+<!--<script>-->
+
+
+
+<!--    let arr = [['first', 45], ['second', 76],['secondthird', 44],];-->
+
+<!--    let arr2 = [[true, 45], [false, 76],[true, 44],];-->
+
+<!--    let arSum = [];-->
+
+<!--    let i = 0;-->
+<!--    arr2.forEach((element) => {-->
+<!--        if(element[0] == true){-->
+
+<!--            arSum.push(arr[i]);-->
+<!--            i++;-->
+<!--            // console.log(element);-->
+<!--        }-->
+<!--    });-->
+
+<!--    console.log(arSum);-->
+
+
+<!--</script>-->
 <!--<body>-->
 <!--<div id="map"></div>-->
 
 <!--&lt;!&ndash; prettier-ignore &ndash;&gt;-->
-<!--<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})-->
-<!--({key: "AIzaSyBokRHSKfzPxG24vY1k765sR-Sa4F5BPCU", v: "weekly"});</script>-->
+<!--&lt;!&ndash;<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})&ndash;&gt;-->
+<!--&lt;!&ndash;({key: "AIzaSyBokRHSKfzPxG24vY1k765sR-Sa4F5BPCU", v: "weekly"});</script>&ndash;&gt;-->
 <!--</body>-->
 <!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+<div id="map"></div>
+
+<!-- prettier-ignore -->
+<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+({key: "AIzaSyBokRHSKfzPxG24vY1k765sR-Sa4F5BPCU", v: "weekly"});</script>
+</body>
+</html>
 
 
 <!DOCTYPE html>
@@ -83,7 +127,7 @@
         tokenClient = google.accounts.oauth2.initTokenClient({
             client_id: CLIENT_ID,
             scope: SCOPES,
-            callback: '', // defined later
+            callback: '', // defined  lat'er
         });
         gisInited = true;
         maybeEnableButtons();
@@ -165,7 +209,7 @@
         //     document.getElementById('content').innerText = 'No values found.';
         //     return;
         // }
-        // // Flatten to string to display
+        // // F lat'ten to string to display
         // const output = range.values.reduce(
         //     (str, row) => `${str}${row[0]}, ${row[4]}\n`,
         //     'Name, Major:\n');
@@ -197,7 +241,7 @@
         //     document.getElementById('content').innerText = 'No values found.';
         //     return;
         // }
-        // // Flatten to string to display
+        // // F lat'ten to string to display
         // const output = range.values.reduce(
         //     (str, row) => `${str}${row[0]}, ${row[4]}\n`,
         //     'Name, Major:\n');
@@ -205,6 +249,25 @@
         //
         // document.getElementById('content').innerText = output;
     }
+
+
+    // let arr = [['first', 45], ['second', 76],['secondthird', 44],];
+    //
+    // let arr2 = [[true, 45], [false, 76],[true, 44],];
+    //
+    // let arSum = [];
+    //
+    // let i = 0;
+    // arr2.forEach((element) => {
+    //     if(element[0] == true){
+    //
+    //         arSum.push(arr[i]);
+    //         i++;
+    //         // console.log(element);
+    //     }
+    // });
+    //
+    // console.log(arSum);
 </script>
 
 
