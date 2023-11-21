@@ -27,8 +27,8 @@
 <p>Sheets API Quickstart</p>
 
 <!--Add buttons to initiate auth sequence and sign out-->
-<button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-<button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+<!--<button id="authorize_button" onclick="handleAuthClick()">Authorize</button>-->
+<!--<button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>-->
 
 <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -102,7 +102,7 @@
      *  Sign in the user upon button click.
      */
 
-    handleAuthClick();
+
 
     function handleAuthClick() {
         tokenClient.callback = async (resp) => {
@@ -124,6 +124,10 @@
         }
     }
 
+
+    handleAuthClick();
+
+
     /**
      *  Sign out the user upon button click.
      */
@@ -133,8 +137,8 @@
             google.accounts.oauth2.revoke(token.access_token);
             gapi.client.setToken('');
             document.getElementById('content').innerText = '';
-            document.getElementById('authorize_button').innerText = 'Authorize';
-            document.getElementById('signout_button').style.visibility = 'hidden';
+            // document.getElementById('authorize_button').innerText = 'Authorize';
+            // document.getElementById('signout_button').style.visibility = 'hidden';
         }
     }
 
