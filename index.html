@@ -156,16 +156,22 @@
             await listPoints();
             await listStatus();
 
-            console.log(listPointsResp.result.values);
+            // console.log(listPointsResp.result.values);
             // console.log(listStatusResp.result.values);
+
+
+            let points = listPointsResp.result.values;
+            let statuses = listStatusResp.result.values;
+
+            console.log(points[0]);
 
             let activePoints = [];
 
             let i = 0;
-            listStatusResp.result.values.forEach((element) => {
+            statuses.forEach((element) => {
                 if(element[0] == true){
 
-                    activePoints.push(listPointsResp.result.values[i]);
+                    activePoints.push(points[i]);
                     i++;
                     // console.log(element);
                 }
