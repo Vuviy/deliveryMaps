@@ -27,8 +27,8 @@
 <p>Sheets API Quickstart</p>
 
 <!--Add buttons to initiate auth sequence and sign out-->
-<!--<button id="authorize_button" onclick="handleAuthClick()">Authorize</button>-->
-<!--<button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>-->
+<button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+<button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
 
 <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -53,8 +53,8 @@
     let gapiInited = false;
     let gisInited = false;
 
-    // document.getElementById('authorize_button').style.visibility = 'hidden';
-    // document.getElementById('signout_button').style.visibility = 'hidden';
+    document.getElementById('authorize_button').style.visibility = 'hidden';
+    document.getElementById('signout_button').style.visibility = 'hidden';
 
     /**
      * Callback after api.js is loaded.
@@ -102,8 +102,6 @@
      *  Sign in the user upon button click.
      */
 
-
-
     function handleAuthClick() {
         tokenClient.callback = async (resp) => {
             if (resp.error !== undefined) {
@@ -124,23 +122,19 @@
         }
     }
 
-
-    handleAuthClick();
-
-
     /**
      *  Sign out the user upon button click.
      */
-    function handleSignoutClick() {
-        const token = gapi.client.getToken();
-        if (token !== null) {
-            google.accounts.oauth2.revoke(token.access_token);
-            gapi.client.setToken('');
-            document.getElementById('content').innerText = '';
-            // document.getElementById('authorize_button').innerText = 'Authorize';
-            // document.getElementById('signout_button').style.visibility = 'hidden';
-        }
-    }
+    // function handleSignoutClick() {
+    //     const token = gapi.client.getToken();
+    //     if (token !== null) {
+    //         google.accounts.oauth2.revoke(token.access_token);
+    //         gapi.client.setToken('');
+    //         document.getElementById('content').innerText = '';
+    //         // document.getElementById('authorize_button').innerText = 'Authorize';
+    //         // document.getElementById('signout_button').style.visibility = 'hidden';
+    //     }
+    // }
 
     /**
      * Print the names and majors of students in a sample spreadsheet:
